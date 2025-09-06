@@ -1,0 +1,154 @@
+Observations:
+   - FLAML achieved a slightly higher best NDCG score (0.984) compared to Grid Search (0.981).
+   - Grid Search found a good result faster (best score at around 160 seconds).
+   - FLAML took longer to find the best score (about 726 seconds) but ended up with a better NDCG.
+   - Grid Search reached its peak performance quickly and then stayed flat.
+   - FLAML showed gradual improvement and ended with a better score.
+   - Grid Search tested fixed combinations.
+   - FLAML adjusted its parameters dynamically, which took more time but helped find better results.
+   - Grid Search was faster to find good results.
+   - FLAML was slower but gave a slightly better final performance. 
+
+
+outputs of both grid search and flaml are
+
+grid_output = [{'config': {'learning_rate': 1e-07, 'epochs': 1},
+  'val_ndcg': 0.968620727781185,
+  'total_time_s': 82.67272233963013},
+ {'config': {'learning_rate': 1e-06, 'epochs': 1},
+  'val_ndcg': 0.9765531469860639,
+  'total_time_s': 82.94249367713928},
+ {'config': {'learning_rate': 1e-05, 'epochs': 1},
+  'val_ndcg': 0.9256546283136262,
+  'total_time_s': 82.20301675796509},
+ {'config': {'learning_rate': 1e-07, 'epochs': 2},
+  'val_ndcg': 0.9807247274504859,
+  'total_time_s': 161.52999544143677},
+ {'config': {'learning_rate': 1e-06, 'epochs': 2},
+  'val_ndcg': 0.9662877023987997,
+  'total_time_s': 161.89894366264343},
+ {'config': {'learning_rate': 1e-05, 'epochs': 2},
+  'val_ndcg': 0.9068894629149464,
+  'total_time_s': 163.74361896514893},
+ {'config': {'learning_rate': 1e-07, 'epochs': 3},
+  'val_ndcg': 0.9666828987507607,
+  'total_time_s': 244.4059088230133},
+ {'config': {'learning_rate': 1e-06, 'epochs': 3},
+  'val_ndcg': 0.9527732174058388,
+  'total_time_s': 242.64330315589905},
+ {'config': {'learning_rate': 1e-05, 'epochs': 3},
+  'val_ndcg': 0.9007724292638516,
+  'total_time_s': 242.26327776908875},
+ {'config': {'learning_rate': 1e-07, 'epochs': 4},
+  'val_ndcg': 0.9696841600721772,
+  'total_time_s': 323.4665811061859},
+ {'config': {'learning_rate': 1e-06, 'epochs': 4},
+  'val_ndcg': 0.9439019272402812,
+  'total_time_s': 321.5323565006256},
+ {'config': {'learning_rate': 1e-05, 'epochs': 4},
+  'val_ndcg': 0.9013795215107848,
+  'total_time_s': 322.6466145515442},
+ {'config': {'learning_rate': 1e-07, 'epochs': 5},
+  'val_ndcg': 0.9722564310769637,
+  'total_time_s': 403.64431142807007},
+ {'config': {'learning_rate': 1e-06, 'epochs': 5},
+  'val_ndcg': 0.9360363061465237,
+  'total_time_s': 402.54886746406555},
+ {'config': {'learning_rate': 1e-05, 'epochs': 5},
+  'val_ndcg': 0.8971697762865906,
+  'total_time_s': 401.51158022880554}]
+
+FLAML Output:
+
+flaml_results = [
+    {
+        "val_ndcg": 0.969057,
+        "training_iteration": 0,
+        "config": {"learning_rate": 1.566261042027828e-07, "epochs": 1},
+        "time_total_s": 49.68
+    },
+    {
+        "val_ndcg": 0.969582,
+        "training_iteration": 0,
+        "config": {"learning_rate": 1e-07, "epochs": 1},
+        "time_total_s": 96.87
+    },
+    {
+        "val_ndcg": 0.973992,
+        "training_iteration": 0,
+        "config": {"learning_rate": 3.012943274404922e-07, "epochs": 3},
+        "time_total_s": 144.22
+    },
+    {
+        "val_ndcg": 0.973976,
+        "training_iteration": 0,
+        "config": {"learning_rate": 1.588658739603088e-06, "epochs": 1},
+        "time_total_s": 191.46
+    },
+    {
+        "val_ndcg": 0.973844,
+        "training_iteration": 0,
+        "config": {"learning_rate": 1e-07, "epochs": 5},
+        "time_total_s": 242.12
+    },
+    {
+        "val_ndcg": 0.970422,
+        "training_iteration": 0,
+        "config": {"learning_rate": 8.527815947434127e-07, "epochs": 1},
+        "time_total_s": 289.64
+    },
+    {
+        "val_ndcg": 0.974927,
+        "training_iteration": 0,
+        "config": {"learning_rate": 1.0644961418888523e-07, "epochs": 5},
+        "time_total_s": 338.67
+    },
+    {
+        "val_ndcg": 0.978888,
+        "training_iteration": 0,
+        "config": {"learning_rate": 1e-07, "epochs": 4},
+        "time_total_s": 385.78
+    },
+    {
+        "val_ndcg": 0.976971,
+        "training_iteration": 0,
+        "config": {"learning_rate": 2.361222316000347e-07, "epochs": 5},
+        "time_total_s": 432.97
+    },
+    {
+        "val_ndcg": 0.981083,
+        "training_iteration": 0,
+        "config": {"learning_rate": 3.678324166647037e-07, "epochs": 4},
+        "time_total_s": 486.62
+    },
+    {
+        "val_ndcg": 0.975690,
+        "training_iteration": 0,
+        "config": {"learning_rate": 2.1630404391307118e-07, "epochs": 5},
+        "time_total_s": 533.11
+    },
+    {
+        "val_ndcg": 0.963931,
+        "training_iteration": 0,
+        "config": {"learning_rate": 6.255115914696963e-07, "epochs": 3},
+        "time_total_s": 579.42
+    },
+    {
+        "val_ndcg": 0.940865,
+        "training_iteration": 0,
+        "config": {"learning_rate": 1.2182509111624984e-06, "epochs": 4},
+        "time_total_s": 632.29
+    },
+    {
+        "val_ndcg": 0.966542,
+        "training_iteration": 0,
+        "config": {"learning_rate": 5.31640988651175e-07, "epochs": 4},
+        "time_total_s": 679.18
+    },
+    {
+        "val_ndcg": 0.984476,
+        "training_iteration": 0,
+        "config": {"learning_rate": 4.515111487754442e-07, "epochs": 2},
+        "time_total_s": 726.48
+    }
+]
